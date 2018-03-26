@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="编码设置采用 UTF-8 编码，在 CSS 代码头部使用：1@charset &quot;utf-8&quot;;  注意，必须要定义在 CSS 文件所有字符的前面（包括编码注释），@charset 才会生效。例如，下面的例子都会使得 @charset 失效：123456789/* 字符编码 */@charset &quot;utf-8&quot;;html,body &amp;#123;  height: 100%;&amp;#125;@charse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 样式命名和书写规范">
+<meta property="og:url" content="http://yoursite.com/2018/03/16/CSS 样式命名和书写规范/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="编码设置采用 UTF-8 编码，在 CSS 代码头部使用：1@charset &quot;utf-8&quot;;  注意，必须要定义在 CSS 文件所有字符的前面（包括编码注释），@charset 才会生效。例如，下面的例子都会使得 @charset 失效：123456789/* 字符编码 */@charset &quot;utf-8&quot;;html,body &amp;#123;  height: 100%;&amp;#125;@charse">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-19T00:56:14.326Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS 样式命名和书写规范">
+<meta name="twitter:description" content="编码设置采用 UTF-8 编码，在 CSS 代码头部使用：1@charset &quot;utf-8&quot;;  注意，必须要定义在 CSS 文件所有字符的前面（包括编码注释），@charset 才会生效。例如，下面的例子都会使得 @charset 失效：123456789/* 字符编码 */@charset &quot;utf-8&quot;;html,body &amp;#123;  height: 100%;&amp;#125;@charse">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/16/CSS 样式命名和书写规范/"/>
+
+
+
+
+
+  <title>CSS 样式命名和书写规范 | Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">书房</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/16/CSS 样式命名和书写规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何印">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS 样式命名和书写规范</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T11:12:23+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="编码设置"><a href="#编码设置" class="headerlink" title="编码设置"></a>编码设置</h1><p>采用 UTF-8 编码，在 CSS 代码头部使用：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">charset</span> <span class="string">"utf-8"</span>;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意，必须要定义在 CSS 文件所有字符的前面（包括编码注释），@charset 才会生效。<br><br>例如，下面的例子都会使得 @charset 失效：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* 字符编码 */</span></span><br><span class="line">@<span class="keyword">charset</span> <span class="string">"utf-8"</span>;</span><br><span class="line"><span class="selector-tag">html</span>,</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">charset</span> <span class="string">"utf-8"</span>;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="命名空间规范"><a href="#命名空间规范" class="headerlink" title="命名空间规范"></a>命名空间规范</h1><ul>
+<li>布局：以 g 为命名空间，例如：.g-wrap 、.g-header、.g-content。</li>
+<li>状态：以 s 为命名空间，表示动态的、具有交互性质的状态，例如：.s-current、s-selected。</li>
+<li>工具：以 u 为命名空间，表示不耦合业务逻辑的、可复用的的工具，例如：u-clearfix、u-ellipsis。</li>
+<li>组件：以 m 为命名空间，表示可复用、移植的组件模块，例如：m-slider、m-dropMenu。</li>
+<li>钩子：以 j 为命名空间，表示特定给 JavaScript 调用的类名，例如：j-request、j-open。</li>
+</ul>
+<h4 id="命名空间思想"><a href="#命名空间思想" class="headerlink" title="命名空间思想"></a>命名空间思想</h4><p>没有选择 BEM 这种命名过于严苛及样式名过长过丑的规则，采取了一种比较折中的方案。</p>
+<h4 id="不建议使用下划线-进行连接"><a href="#不建议使用下划线-进行连接" class="headerlink" title="不建议使用下划线 _ 进行连接"></a>不建议使用下划线 _ 进行连接</h4><ul>
+<li>节省操作，输入的时候少按一个 shift 键</li>
+<li>能良好区分 JavaScript 变量命名</li>
+</ul>
+<h4 id="字符小写"><a href="#字符小写" class="headerlink" title="字符小写"></a>字符小写</h4><ul>
+<li>定义的选择器名，属性及属性值的书写皆为小写。</li>
+</ul>
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><p>当一个规则包含多个选择器时，每个选择器独占一行。</p>
+<blockquote>
+<p>、+、~、&gt; 选择器的两边各保留一个空格。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-class">.g-header</span> &gt; <span class="selector-class">.g-header-des</span>,</span><br><span class="line"><span class="selector-class">.g-content</span> ~ <span class="selector-class">.g-footer</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="命名短且语义化良好"><a href="#命名短且语义化良好" class="headerlink" title="命名短且语义化良好"></a>命名短且语义化良好</h4><p>对于选择器的命名，尽量简洁且具有语义化，不应该出现 g-abc 这种语义模糊的命名。</p>
+<h1 id="规则声明块"><a href="#规则声明块" class="headerlink" title="规则声明块"></a>规则声明块</h1><ul>
+<li>当规则声明块中有多个样式声明时，每条样式独占一行。</li>
+<li>在规则声明块的左大括号 { 前加一个空格。</li>
+<li>在样式属性的冒号 : 后面加上一个空格，前面不加空格。</li>
+<li>在每条样式后面都以分号 ; 结尾。</li>
+<li>规则声明块的右大括号 } 独占一行。</li>
+<li>每个规则声明间用空行分隔。</li>
+<li>所有最外层引号使用单引号 ‘ 。</li>
+<li>当一个属性有多个属性值时，以逗号 , 分隔属性值，每个逗号后添加一个空格，当单个属性值过长时，每个属性值独占一行。</li>
+</ul>
+<blockquote>
+<p>完整示例如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.g-footer</span>,</span><br><span class="line"><span class="selector-class">.g-header</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.g-content</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>:</span><br><span class="line">    <span class="built_in">linear-gradient</span>(135deg, deeppink 25%, transparent 25%) -<span class="number">50px</span> <span class="number">0</span>,</span><br><span class="line">    <span class="built_in">linear-gradient</span>(225deg, deeppink 25%, transparent 25%) -<span class="number">50px</span> <span class="number">0</span>,</span><br><span class="line">    <span class="built_in">linear-gradient</span>(315deg, deeppink 25%, transparent 25%),</span><br><span class="line">    <span class="built_in">linear-gradient</span>(45deg, deeppink 25%, transparent 25%);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.g-content</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="数值与单位"><a href="#数值与单位" class="headerlink" title="数值与单位"></a>数值与单位</h1><ul>
+<li><p>当属性值或颜色参数为 0 – 1 之间的数时，省略小数点前的 0 。<br><br><del><code>color: rgba(255, 255, 255, 0.5)</code></del><br><br><code>color: rgba(255, 255, 255, .5);</code></p>
+</li>
+<li><p>当长度值为 0 时省略单位。<br><br><del><code>margin: 0px auto</code></del><br><br><code>margin: 0 auto</code></p>
+</li>
+<li>十六进制的颜色属性值使用小写和尽量简写。<br><br><del><code>color: #ffcc00</code></del><br><br><code>color: #fc0</code></li>
+</ul>
+<h1 id="样式属性顺序"><a href="#样式属性顺序" class="headerlink" title="样式属性顺序"></a>样式属性顺序</h1><p>单个样式规则下的属性在书写时，应按功能进行分组，并以 Positioning Model &gt; Box Model &gt; Typographic &gt; Visual 的顺序书写，提高代码的可读性。</p>
+<ul>
+<li>如果包含 content 属性，应放在最前面；</li>
+<li>Positioning Model 布局方式、位置，相关属性包括：position / top / right / bottom / left / z-index / display / float / …</li>
+<li>Box Model 盒模型，相关属性包括：width / height / padding / margin / border / overflow / …</li>
+<li>Typographic 文本排版，相关属性包括：font / line-height / text-align / word-wrap / …</li>
+<li>Visual 视觉外观，相关属性包括：color / background / list-style / transform / animation / transition / …</li>
+</ul>
+<blockquote>
+<p>Positioning 处在第一位，因为他可以使一个元素脱离正常文本流，并且覆盖盒模型相关的样式。盒模型紧跟其后，因为他决定了一个组件的大小和位置。其他属性只在组件内部起作用或者不会对前面两种情况的结果产生影响，所以他们排在后面。</p>
+</blockquote>
+<h1 id="合理使用使用引号"><a href="#合理使用使用引号" class="headerlink" title="合理使用使用引号"></a>合理使用使用引号</h1><p>在某些样式中，会出现一些含有空格的关键字或者中文关键字。</p>
+<p>font-family 内使用引号</p>
+<p>当字体名字中间有空格，中文名字体及 Unicode 字符编码表示的中文字体，为了保证兼容性，都建议在字体两端添加单引号或者双引号：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'Microsoft YaHei'</span>, <span class="string">'黑体-简'</span>, <span class="string">'\5b8b\4f53'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="background-image-的-url-内使用引号"><a href="#background-image-的-url-内使用引号" class="headerlink" title="background-image 的 url 内使用引号"></a>background-image 的 url 内使用引号</h5><blockquote>
+<p>如果路径里面有空格，旧版 IE 是无法识别的，会导致路径失效，建议不管是否存在空格，都添加上单引号或者双引号：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'...'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="避免使用-important"><a href="#避免使用-important" class="headerlink" title="避免使用 !important"></a>避免使用 !important</h3><p>除去某些极特殊的情况，尽量不要不要使用 !important。</p>
+<p>!important 的存在会给后期维护以及多人协作带来噩梦般的影响。</p>
+<blockquote>
+<p>当存在样式覆盖层叠时，如果你发现新定义的一个样式无法覆盖一个旧的样式，只有加上 !important 才能生效时，是因为你新定义的选择器的优先级不够旧样式选择器的优先级高。所以，合理的书写新样式选择器，是完全可以规避一些看似需要使用 !important 的情况的。</p>
+</blockquote>
+<h1 id="代码注释"><a href="#代码注释" class="headerlink" title="代码注释"></a>代码注释</h1><h4 id="1-单行注释"><a href="#1-单行注释" class="headerlink" title="1.单行注释"></a>1.单行注释</h4><blockquote>
+<p>星号与内容之间必须保留一个空格。</p>
+</blockquote>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 表格隔行变色 */</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-多行注释"><a href="#2-多行注释" class="headerlink" title="2.多行注释"></a>2.多行注释</h4><blockquote>
+<p>星号要一列对齐，星号与内容之间必须保留一个空格。<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sometimes you need <span class="keyword">to</span> include <span class="keyword">optional</span> context <span class="keyword">for</span> the entire component. <span class="keyword">Do</span> that up here <span class="keyword">if</span> it<span class="comment">'s important enough.</span></span><br><span class="line"> */</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="3-规则声明块内注释"><a href="#3-规则声明块内注释" class="headerlink" title="3.规则声明块内注释"></a>3.规则声明块内注释</h4><blockquote>
+<p>使用 // 注释，// 后面加上一个空格，注释独立一行。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.g-footer</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="4-文件注释"><a href="#4-文件注释" class="headerlink" title="4.文件注释"></a>4.文件注释</h4><blockquote>
+<p>文件顶部必须包含文件注释，用 @name 标识文件说明。星号要一列对齐，星号与内容之间必须保留一个空格，标识符冒号与内容之间必须保留一个空格。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@name</span>: 文件名或模块名</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 文件或模块描述</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: author-name(mail-name<span class="doctag">@domain</span>.com)</span></span><br><span class="line"><span class="comment"> *          author-name2(mail-name2<span class="doctag">@domain</span>.com)</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@update</span>: 2015-04-29 00:02</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>@description为文件或模块描述。</li>
+<li>@update为可选项，建议每次改动都更新一下。</li>
+</ul>
+<p>当该业务项目主要由固定的一个或多个人负责时，需要添加@author标识，一方面是尊重劳动成果，另一方面方便在需要时快速定位责任人。</p>
+<h1 id="SASS-使用建议"><a href="#SASS-使用建议" class="headerlink" title="SASS 使用建议"></a>SASS 使用建议</h1><h4 id="1-嵌套层级规定"><a href="#1-嵌套层级规定" class="headerlink" title="1.嵌套层级规定"></a>1.嵌套层级规定</h4><p>使用 SASS 、 LESS 等预处理器时，建议嵌套层级不超过 3 层。</p>
+<h4 id="2-组件-公用类的使用方法"><a href="#2-组件-公用类的使用方法" class="headerlink" title="2.组件/公用类的使用方法"></a>2.组件/公用类的使用方法</h4><blockquote>
+<p>组件/公用类使用 %placeholders 定义，使用 @extend 引用。如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">%<span class="selector-tag">clearfix</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.g-header</span> &#123;</span><br><span class="line">  @extend %clearfix;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="3-尽量避免使用标签名"><a href="#3-尽量避免使用标签名" class="headerlink" title="3.尽量避免使用标签名"></a>3.尽量避免使用标签名</h4><p>使用 SASS ，或者说在 CSS 里也有这种困惑。</p>
+<blockquote>
+<p>假设我们有如下 html 结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"g-content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"g-content-list"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>在给最里层的标签命名书写样式的时候，我们有两种选择：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.g-content</span> &#123;</span><br><span class="line">  .g-content-list &#123;</span><br><span class="line">    <span class="selector-tag">li</span> &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.g-content</span> &#123;</span><br><span class="line">  <span class="selector-class">.g-content-list</span> &#123;</span><br><span class="line">    <span class="selector-class">.item</span> &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也就是，编译之后生成了下面这两个，到底使用哪个好呢？</p>
+<ul>
+<li><code>.g-content .g-content-list li { }</code></li>
+<li><code>.g-content .g-content-list .item { }</code></li>
+</ul>
+<p>基于 CSS 选择器的解析规则（从右向左），建议使用上述第二种 <code>.g-content .g-content-list .item { }</code> ，避免使用通用标签名作为选择器的一环可以提高 CSS 匹配性能。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/15/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/20/javascript常用实例的实现与封装/" rel="prev" title="javascript常用实例的实现与封装">
+                javascript常用实例的实现与封装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="何印" />
+            
+              <p class="site-author-name" itemprop="name">何印</p>
+              <p class="site-description motion-element" itemprop="description">你的肉体只是时光，不停流逝的时光，你不过是每一个孤独的瞬间。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编码设置"><span class="nav-number">1.</span> <span class="nav-text">编码设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命名空间规范"><span class="nav-number">2.</span> <span class="nav-text">命名空间规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命名空间思想"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">命名空间思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不建议使用下划线-进行连接"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">不建议使用下划线 _ 进行连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符小写"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">字符小写</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择器"><span class="nav-number">3.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命名短且语义化良好"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">命名短且语义化良好</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#规则声明块"><span class="nav-number">4.</span> <span class="nav-text">规则声明块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数值与单位"><span class="nav-number">5.</span> <span class="nav-text">数值与单位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样式属性顺序"><span class="nav-number">6.</span> <span class="nav-text">样式属性顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合理使用使用引号"><span class="nav-number">7.</span> <span class="nav-text">合理使用使用引号</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#background-image-的-url-内使用引号"><span class="nav-number">7.0.0.0.1.</span> <span class="nav-text">background-image 的 url 内使用引号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免使用-important"><span class="nav-number">7.0.1.</span> <span class="nav-text">避免使用 !important</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码注释"><span class="nav-number">8.</span> <span class="nav-text">代码注释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-单行注释"><span class="nav-number">8.0.0.1.</span> <span class="nav-text">1.单行注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-多行注释"><span class="nav-number">8.0.0.2.</span> <span class="nav-text">2.多行注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-规则声明块内注释"><span class="nav-number">8.0.0.3.</span> <span class="nav-text">3.规则声明块内注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-文件注释"><span class="nav-number">8.0.0.4.</span> <span class="nav-text">4.文件注释</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SASS-使用建议"><span class="nav-number">9.</span> <span class="nav-text">SASS 使用建议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-嵌套层级规定"><span class="nav-number">9.0.0.1.</span> <span class="nav-text">1.嵌套层级规定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-组件-公用类的使用方法"><span class="nav-number">9.0.0.2.</span> <span class="nav-text">2.组件/公用类的使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-尽量避免使用标签名"><span class="nav-number">9.0.0.3.</span> <span class="nav-text">3.尽量避免使用标签名</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">何印</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
