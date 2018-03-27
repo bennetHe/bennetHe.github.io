@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5dba58;
+  background: #93b9f9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2903,4 +2903,27 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 14px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 14px rgba(202,203,204,0.5);
+}
+.header {
+  background: url("/images/header-bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.sidebar {
+  background: url("/images/sidebar-bg.jpg");
+  background-size: 320px 100%;
+  background-repeat: no-repeat;
+  box-shadow: inset 2px 2px 40px #d9d9d9;
+}
+.site-author-image {
+  border: none;
+  -webkit-filter: sepia(0.46);
+  filter: sepia(0.46);
 }
