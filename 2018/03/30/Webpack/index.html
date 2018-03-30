@@ -86,12 +86,12 @@
 <meta property="og:site_name" content="he he Notes">
 <meta property="og:description" content="webpack是现代前端开发中最火的模块打包工具，只需要通过简单的配置，便可以完成模块的加载和打包。那它是怎么做到通过对一些插件的配置，便可以轻松实现对代码的构建呢？ webpack的配置123456789101112131415161718192021222324252627282930313233343536373839404142434445const path = require(&apos;pat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://note.youdao.com/favicon.ico">
-<meta property="og:updated_time" content="2018-03-30T03:16:06.771Z">
+<meta property="og:image" content="https://sfault-image.b0.upaiyun.com/290/662/2906625083-5aa3d02684c06_articlex">
+<meta property="og:updated_time" content="2018-03-30T07:59:11.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack 详解">
 <meta name="twitter:description" content="webpack是现代前端开发中最火的模块打包工具，只需要通过简单的配置，便可以完成模块的加载和打包。那它是怎么做到通过对一些插件的配置，便可以轻松实现对代码的构建呢？ webpack的配置123456789101112131415161718192021222324252627282930313233343536373839404142434445const path = require(&apos;pat">
-<meta name="twitter:image" content="https://note.youdao.com/favicon.ico">
+<meta name="twitter:image" content="https://sfault-image.b0.upaiyun.com/290/662/2906625083-5aa3d02684c06_articlex">
 
 
 
@@ -384,7 +384,7 @@
 <li>实例钩子的时候参数数量</li>
 <li>是否使用了interception</li>
 </ol>
-<h2 id="Tapable详解"><a href="#Tapable详解" class="headerlink" title="Tapable详解"></a>Tapable详解</h2><p><img src="https://note.youdao.com/favicon.ico" alt="image"></p>
+<h2 id="Tapable详解"><a href="#Tapable详解" class="headerlink" title="Tapable详解"></a>Tapable详解</h2><p><img src="https://sfault-image.b0.upaiyun.com/290/662/2906625083-5aa3d02684c06_articlex" alt="图片"></p>
 <p>对于Sync*类型的钩子来说。</p>
 <p>注册在该钩子下面的插件的执行顺序都是顺序执行。<br>只能使用tap注册，不能使用tapPromise和tapAsync注册</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 所有的钩子都继承于Hook</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sync</span>* <span class="keyword">extends</span> <span class="title">Hook</span> </span>&#123;</span><br><span class="line">    tapAsync() &#123; <span class="comment">// Sync*类型的钩子不支持tapAsync</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"tapAsync is not supported on a Sync*"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    tapPromise() &#123;<span class="comment">// Sync*类型的钩子不支持tapPromise</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"tapPromise is not supported on a Sync*"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    compile(options) &#123; <span class="comment">// 编译代码来按照一定的策略执行Plugin</span></span><br><span class="line">        factory.setup(<span class="keyword">this</span>, options);</span><br><span class="line">        <span class="keyword">return</span> factory.create(options);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -442,7 +442,7 @@
 <p>最后输出</p>
 <p>在seal执行后，便会调用emit钩子，根据webpack config文件的output配置的path属性，将文件输出到指定的path.</p>
 <blockquote>
-<p>作者： ixlei <br><br><a href="https://segmentfault.com/a/1190000013657042" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013657042</a></p>
+<p>作者： ixlei<br><a href="https://segmentfault.com/a/1190000013657042" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013657042</a></p>
 </blockquote>
 
       
