@@ -81,14 +81,14 @@
 
 <meta name="description" content="avaScript 提供了多种新增，移除，替换数组元素的方法，但是有些会影响原来的数组；有些则不会，它是新建了一个数组。 注意：区分以下两个方法的不同点：  array.splice() 影响原来的数组 array.slice() 不影响原来的数组  新增：影响原数组 使用 array.push() 和 array.ushift() 新增元素会影响原来的数组。  123let mutatingAd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript-array-methods-mutating-vs-non-mutating">
+<meta property="og:title" content="JavaScript 数组方法对比">
 <meta property="og:url" content="http://yoursite.com/2018/05/02/JavaScript 数组方法对比/index.html">
 <meta property="og:site_name" content="河·水">
 <meta property="og:description" content="avaScript 提供了多种新增，移除，替换数组元素的方法，但是有些会影响原来的数组；有些则不会，它是新建了一个数组。 注意：区分以下两个方法的不同点：  array.splice() 影响原来的数组 array.slice() 不影响原来的数组  新增：影响原数组 使用 array.push() 和 array.ushift() 新增元素会影响原来的数组。  123let mutatingAd">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-02T05:55:22.040Z">
+<meta property="og:updated_time" content="2018-05-02T05:58:56.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript-array-methods-mutating-vs-non-mutating">
+<meta name="twitter:title" content="JavaScript 数组方法对比">
 <meta name="twitter:description" content="avaScript 提供了多种新增，移除，替换数组元素的方法，但是有些会影响原来的数组；有些则不会，它是新建了一个数组。 注意：区分以下两个方法的不同点：  array.splice() 影响原来的数组 array.slice() 不影响原来的数组  新增：影响原数组 使用 array.push() 和 array.ushift() 新增元素会影响原来的数组。  123let mutatingAd">
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>javascript-array-methods-mutating-vs-non-mutating | 河·水</title>
+  <title>JavaScript 数组方法对比 | 河·水</title>
   
 
 
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javascript-array-methods-mutating-vs-non-mutating</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript 数组方法对比</h1>
         
 
         <div class="post-meta">
@@ -390,6 +390,7 @@
 <p>使用 array.map() 转换数据</p>
 <p>array.map() 是个强力方法，可以用于转换数据，而不污染原先的数据源。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> origArr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>];  </span><br><span class="line"><span class="keyword">const</span> transformedArr = origArr.map(<span class="function"><span class="params">n</span> =&gt;</span> n + <span class="string">'Hi!'</span>); <span class="comment">// ['aHi!', 'bHi!', 'cHi!', 'dHi!', 'eHi!']  </span></span><br><span class="line"><span class="built_in">console</span>.log(origArr); <span class="comment">// ['a', 'b', 'c', 'd', 'e']; // 原数组毫发无损</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
